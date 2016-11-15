@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Rock Paper Bot</title>
+      	<meta name="description" content="Three moves. One bot. Endless fun.">
+      	<script src="https://use.fontawesome.com/c50e88257f.js"></script>
+      	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <link href="//fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic" rel="stylesheet" type="text/css">
+      	<script>
+      		function load(){
+      			(function() {
+				    var moves = $(".moves");
+				    var moveIndex = -1;
+				    
+				    function showNextMove() {
+				        ++moveIndex;
+				        moves.eq(moveIndex % moves.length)
+				            .fadeIn(2000)
+				            .delay(2000)
+				            .fadeOut(2000, showNextMove);
+				    }
+				    showNextMove();
+				})();
+      		}
+      	</script>
+      	<style>
+	      	.moves {display: none; color:white;}
+	      	body{background-color:#007DFF;font-family: Arial; font-size:16px;color:white;}
+	      	a.button{text-decoration: none; border: 2px solid white;
+    padding: 10px 10px;
+    border-radius: 25px;}
+    		a{color:white;}
+	      	a.button:hover{color: white; opacity: 0.85;}
+	      	.mainHolder{text-align: center;position: absolute; width: 100%; top:45%; transform: translateY(-50%);}
+	      	.footer{width: 100%;text-align: center;position: absolute; bottom: 0; font-size:12px;}
+      	</style>
+    </head>
+
+    <body onload="load()">
+    	<div class="mainHolder">
+    		<div style="font-size:15em;">
+	    		<i class="fa fa-hand-rock-o moves" aria-hidden="true" style="padding-right:10px;"></i><i class="fa fa-hand-paper-o moves" aria-hidden="true" style="padding-right:0px;"></i><i class="fa fa-hand-scissors-o moves" aria-hidden="true" style="padding-right:10px;"></i>
+    		</div>
+    		<span class="mainText">Three moves. One bot. Endless fun.</span>
+    		<br><br><br>
+    		<a href="https://m.me/rockpaperbot" class="button">Play on Messenger</a>
+    	</div>
+    	<div class="footer">
+    	<p>made by <a href="https://justinleger.ca">Justin Leger</a> - <a href="#">Privacy Policy</a></p>
+    	</div>
+    </body>
+</html>
